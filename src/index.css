@@ -1,5 +1,4 @@
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -10,4 +9,38 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Center content using flexbox */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers horizontally */
+  justify-content: center; /* Centers vertically */
+  height: 100vh; /* 100% viewport height to center vertically */
+}
+
+
+
+
+input {
+  margin: 10px;
+}
+
+.input-container {
+  margin-bottom: 15px;
+  border-bottom: 2px solid hotpink;
+}
+
+.result {
+ font-size: 18px;
+}
+
+.center-input {
+  text-align: center;
+}
+
+.developer {
+  margin-top: 50px;
+  color: hotpink;
 }

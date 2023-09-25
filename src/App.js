@@ -1,25 +1,67 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
 
-function App() {
+function AddDaysToDate() {
+  const [dayInputs, setDayInputs] = useState([{ id: 1, daysToAdd: 0 }]);
+  const [results, setResults] = useState({});
+
+  const handleDaysChange = (event, id) => {
+    const updatedDayInputs = dayInputs.map(input =>
+      input.id === id
+        ? { ...input, daysToAdd: parseInt(event.target.value, 10) }
+        : input
+    );
+    setDayInputs(updatedDayInputs);
+  };
+
+  const calculateNewDate = id => {
+    const currentDate = new Date();
+    const newDate = new Date(currentDate);
+    const daysToAdd = dayInputs.find(input => input.id === id).daysToAdd;
+    newDate.setDate(currentDate.getDate() + daysToAdd);
+
+    setResults({
+      ...results,
+      [id]: { days: daysToAdd, date: newDate.toDateString() }
+    });
+  };
+
+  const addNewInput = () => {
+    const newId = dayInputs.length + 1;
+    setDayInputs([...dayInputs, { id: newId, daysToAdd: 0 }]);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="app-container">
+        <h1>Date Calculator</h1>
+        {dayInputs.map(input => (
+          <div key={input.id} className="input-container">
+            <label>
+              Enter number of days to add:
+              <input
+                type="number"
+                value={input.daysToAdd}
+                onChange={event => handleDaysChange(event, input.id)}
+                className="center-input"
+              />
+            </label>
+            <button onClick={() => calculateNewDate(input.id)}>
+              Calculate New Date
+            </button>
+            {results[input.id] && (
+              <p className="result">
+                {results[input.id].days} days added: {results[input.id].date}
+              </p>
+            )}
+          </div>
+        ))}
+        <button onClick={addNewInput}>Add Input</button>
+        <div>
+          <h3 className="developer">developed by: Monica Wolfe</h3>
+        </div>
+      </div>
+    </>
   );
 }
 
-export default App;
+export default AddDaysToDate;
