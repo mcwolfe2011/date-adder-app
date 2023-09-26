@@ -57,6 +57,11 @@ function AddDaysToDate() {
         ))}
         <button onClick={addNewInput}>Add Input</button>
         <div>
+          <p>
+            <a href="https://glittering-bavarois-501d37.netlify.app">
+              Automatically and pre-defined best before dates.
+            </a>
+          </p>
           <h3 className="developer">developed by: Monica Wolfe</h3>
         </div>
       </div>
