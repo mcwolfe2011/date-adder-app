@@ -65,9 +65,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### Check it out:
-Add your own best before date: [https://celadon-nougat-f50b41.netlify.app/]
 
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### Check it out:
+![image](https://github.com/mcwolfe2011/date-adder-app/assets/25851152/1f1c6626-4483-4f2a-a55c-0a2f026a2d5c)
+
+Add your own best before date: [https://celadon-nougat-f50b41.netlify.app/]
